@@ -1,0 +1,11 @@
+.nav-list {
+    @include nav-list
+}
+
+.post-list_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-around;
+}
