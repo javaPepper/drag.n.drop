@@ -1,7 +1,8 @@
-@import './scss/mixins';
-
-@import './scss/base';
 @import './scss/normalize';
+@import './scss/base';
 @import './scss/constants';
 
+@import './scss/mixins';
+
+@import './scss/components/header';
 @import './scss/components/post';

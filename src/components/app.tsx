@@ -1,5 +1,5 @@
 import Footer from "./footer";
-import NavBar from "./nav-bar";
+import Header from "./header";
 import PostsList from "./posts-list";
 
 export default function App() {
@@ -8,7 +8,7 @@ export default function App() {
     <>
       <header className="header">
         <div className="nav-container">
-          <NavBar />
+          <Header />
         </div>
       </header>
       <main>

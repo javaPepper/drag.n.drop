@@ -18,7 +18,7 @@ export default function PostsList({id}: PostsListProps) {
                     title={post.title}
                     content={post.body}
                     key={post.id}
-                    /> 
+                    />  
                 ))
             }
         </div>
