@@ -1,10 +1,14 @@
 export default function Footer() {
     return(
-        <nav className="footer">
+        <nav className="footer container">
             <ul className="nav-list">
-                <li className="link-item">GitHub</li>
+                <li className="link-item">
+                    <button className="btn">Main Page</button>
+                </li>
+                <li className="link-item">
+                    <button className="btn">GitHub</button>
+                </li>
                 <li className="link-item">Date</li>
-                <li className="link-item">Main Page</li>
             </ul>
         </nav>
     )

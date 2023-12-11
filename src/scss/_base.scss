@@ -1,5 +1,6 @@
-.nav-list {
-    @include nav-list
+main {
+    display: flex;
+    justify-content: center;
 }
 
 .post-list_container {
@@ -7,5 +8,6 @@
     flex-wrap: wrap;
     align-items: flex-start;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    width: 1200px;
 }
