@@ -3,6 +3,7 @@ import NavBar from "./nav-bar";
 import PostsList from "./posts-list";
 
 export default function App() {
+  const userId = 1;
   return (
     <>
       <header className="header">
@@ -11,7 +12,8 @@ export default function App() {
         </div>
       </header>
       <main>
-        <PostsList />
+        <PostsList
+        id={userId}/>
       </main>
       <footer>
         <Footer />
