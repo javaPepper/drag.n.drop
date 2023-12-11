@@ -1,11 +1,17 @@
 import { mockPosts } from "../mocks/posts";
 import Post from "./post";
 
-export default function PostsList() {
+type PostsListProps = {
+    id: number;
+}
+
+export default function PostsList({id}: PostsListProps) {
     return(
         <div className="post-list_container">
             {
-                mockPosts.slice(0, 12).map((post) => (
+                mockPosts
+                    .filter((el) => el.userId === id)
+                    .map((post) => (
                     <Post 
                     userId={post.userId}
                     id={post.id}
