@@ -1,0 +1,32 @@
+article {
+    padding: 0 25px;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid $colour-bg-lightblue;
+    border-radius: 15px;
+    width: 200px;
+    height: fit-content;
+    padding: 10px;
+}
+
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+}
+
+.id {
+    width: fit-content;
+}
+
+.post {
+    padding: 10px 0;
+}
