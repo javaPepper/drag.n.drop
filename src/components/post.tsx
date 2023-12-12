@@ -10,7 +10,7 @@ export default function Post({userId, id, title, content}: PostProps) {
     return(
         <article>
             <div className="post-container" id={id.toString()}>
-                <span className="user-id visually-hidden">{userId}</span>
+                <span className="visually-hidden">{userId}</span>
                 <div className="id">{id}</div>
                 <div className="post title">
                     {title}
