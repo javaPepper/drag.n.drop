@@ -11,6 +11,7 @@ export default function UsersList() {
                     name={user.name}
                     email={user.email}
                     phone={user.phone}
+                    key={user.id}
                     />
                 ))}
             </div>

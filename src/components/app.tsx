@@ -1,9 +1,11 @@
 import Footer from "./footer";
 import Header from "./header";
-import PostsList from "./posts-list";
+// import PostsList from "./posts-list";
+import UsersList from "./usersList";
+
 
 export default function App() {
-  const userId = 1;
+  // const userId = 1;
   return (
     <>
       <header className="header">
@@ -12,8 +14,9 @@ export default function App() {
         </div>
       </header>
       <main>
-        <PostsList
-        id={userId}/>
+        <UsersList/>
+        {/* <PostsList
+        id={userId}/> */}
       </main>
       <footer>
         <Footer />
