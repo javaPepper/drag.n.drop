@@ -2,9 +2,7 @@ import Footer from "./footer";
 import Header from "./header";
 import UsersList from "./usersList";
 
-
 export default function App() {
-  
   return (
     <>
       <header className="header">
@@ -13,7 +11,9 @@ export default function App() {
         </div>
       </header>
       <main>
-        <UsersList/>
+        <div className="main-container">
+          <UsersList />
+        </div>
       </main>
       <footer>
         <Footer />

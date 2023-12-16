@@ -5,3 +5,9 @@
     justify-content: space-around;
     align-items: center;
 }
+
+@mixin container {
+    display: flex;
+    justify-content: center;
+    background: $color-header-violet;
+}

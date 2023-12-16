@@ -1,11 +1,10 @@
-main {
+.main-container {
     display: flex;
     justify-content: center;
-    padding: 10px 0;
-    background-color: $color-main-bg-aqua;
 }
 
 .post-list_container {
+    margin: 20px 0;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
