@@ -1,10 +1,5 @@
-.header {
-    margin-bottom: 25px;
-}
 .header-container {
-    display: flex;
-    justify-content: center;
-    background: $color-header-violet;
+    @include container;
 }
 
 .nav-list {

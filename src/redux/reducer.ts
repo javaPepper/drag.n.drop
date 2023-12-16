@@ -1,14 +1,16 @@
 import { PayloadAction, createReducer } from "@reduxjs/toolkit";
-import { setClicked, setUserId } from "./actions";
+import { setClicked, setClickedBackBtn, setUserId } from "./actions";
 
 type InitialStateType = {
     isClicked: boolean,
     id: number,
+    isClickedBackBtn: boolean,
 }
 
 const initialState: InitialStateType = {
     isClicked: false,
     id: 0,
+    isClickedBackBtn: false,
 }
 
 export const postReducer = createReducer(initialState, (builder) => {
@@ -18,5 +20,8 @@ export const postReducer = createReducer(initialState, (builder) => {
         })
         .addCase(setUserId, (state, action: PayloadAction<number>) => {
             state.id = action.payload;
+        })
+        .addCase(setClickedBackBtn, (state, action: PayloadAction<boolean>) => {
+            state.isClickedBackBtn = action.payload;
         })
 })

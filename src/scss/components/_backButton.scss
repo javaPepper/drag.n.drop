@@ -1,0 +1,13 @@
+.back-button {
+    border: 2px solid $color-backBtn-border;
+    padding: 5px 10px;
+    border-radius: 15px;
+    width: 200px;
+    color: $color-backBtn-bg;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    color: $color-backBtnHov;
+    background-color: $color-backBtnHov-bg;
+}

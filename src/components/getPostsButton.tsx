@@ -1,11 +1,11 @@
-import { setClicked, setUserId } from "../redux/actions";
+import { setClicked, setClickedBackBtn, setUserId } from "../redux/actions";
 import { useAppDispatch } from "../hooks";
 
 type GetPostsButtonProps = {
-    id: number;
-}
+  id: number;
+};
 
-export default function GetPostsButton({id}: GetPostsButtonProps) {
+export default function GetPostsButton({ id }: GetPostsButtonProps) {
   const dispatch = useAppDispatch();
 
   return (
@@ -15,6 +15,7 @@ export default function GetPostsButton({id}: GetPostsButtonProps) {
         onClick={() => {
           dispatch(setClicked(true));
           dispatch(setUserId(id));
+          dispatch(setClickedBackBtn(false));
         }}
       >
         Get Posts
