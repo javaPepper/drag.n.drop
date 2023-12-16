@@ -1,6 +1,6 @@
 import Footer from "./footer";
 import Header from "./header";
-import UsersList from "./usersList";
+import PostsList from "./posts-list";
 
 
 export default function App() {
@@ -14,7 +14,6 @@ export default function App() {
         </div>
       </header>
       <main>
-        <UsersList/>
         <div className="main-container">
           <PostsList
           id={userId}/>
