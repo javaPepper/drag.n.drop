@@ -32,8 +32,7 @@ export default function User({ id, name, email, phone }: UserProps) {
             <li className="email">{email}</li>
             <li className="phone">{phone}</li>
           </ul>
-          {isMouseOver && !isMouseLeave && 
-          <GetPostsButton id={id}/>}
+          {isMouseOver && !isMouseLeave && <GetPostsButton id={id} />}
         </div>
       </article>
     </>

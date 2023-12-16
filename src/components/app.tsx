@@ -2,10 +2,7 @@ import Footer from "./footer";
 import Header from "./header";
 import PostsList from "./posts-list";
 
-
 export default function App() {
-  
-  const userId = 3;
   return (
     <>
       <header className="header">
@@ -15,11 +12,7 @@ export default function App() {
       </header>
       <main>
         <div className="main-container">
-          <PostsList
-          id={userId}/>
-          <div className="button">
-            <button className="back-button">Back</button>
-          </div>
+          <UsersList />
         </div>
       </main>
       <footer>
