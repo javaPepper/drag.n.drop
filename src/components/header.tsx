@@ -1,6 +1,6 @@
 export default function Header() {
     return(
-        <nav className="header container">
+        <nav className="header header-container">
             <ul className="nav-list">
                 <li className="nav-list-item">
                     <button className="btn">Main Page</button>
