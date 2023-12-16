@@ -12,3 +12,16 @@
     justify-content: space-evenly;
     width: 1200px;
 }
+
+.back-button {
+    border: 2px solid #b0e0e6;
+    padding: 5px 10px;
+    border-radius: 15px;
+    width: 200px;
+    color: #6db3bd;
+}
+
+.back-button:hover {
+    color: #ffffff;
+    background-color: #6db3bd;
+}
