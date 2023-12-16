@@ -4,7 +4,7 @@
 .header-container {
     display: flex;
     justify-content: center;
-    background: rgb(250, 218, 250);
+    background: $color-header-violet;
 }
 
 .nav-list {
@@ -15,10 +15,10 @@
     border-radius: 15px;
     cursor: pointer;
     padding: 15px;
-    background: rgb(176, 211, 248);
+    background: $color-button-lightaqua;
     border: none;
 }
 
 .sign-in {
-    background: rgb(203, 163, 241);
+    background: $color-signInBtn-lightvio;
 }

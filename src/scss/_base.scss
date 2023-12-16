@@ -1,6 +1,8 @@
 .main-container {
     display: flex;
     justify-content: center;
+    padding: 10px 0;
+    background-color: $color-main-bg-aqua;
 }
 
 .post-list_container {
