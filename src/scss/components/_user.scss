@@ -1,16 +1,20 @@
 .users-list-container {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
 }
 
 .user-description-list {
     display: flex;
-    border: 1px solid;
     flex-direction: column;
-    border: 3px solid $colour-bg-lightblue;
+    border: 3px solid $color-border-lightblue;
     border-radius: 15px;
     padding: 10px;
+    background-color: $color-bg-lightpink;
+}
+
+.user-description-list:hover {
+    background-color: $color-hover-pink;
+    cursor: pointer;
 }
 
 .user-container {

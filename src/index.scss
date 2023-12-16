@@ -1,9 +1,10 @@
 @import './scss/normalize';
-@import './scss/base';
 @import './scss/constants';
+@import './scss/base';
 
 @import './scss/mixins';
 
 @import './scss/components/header';
 @import './scss/components/post';
 @import './scss/components/user';
+@import './scss/components/getPostBtn';
