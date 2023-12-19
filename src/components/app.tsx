@@ -1,6 +1,6 @@
-import Footer from "./footer";
-import Header from "./header";
-import UsersList from "./usersList";
+import Footer from './footer';
+import Header from './header';
+import UsersList from './users-list';
 
 export default function App() {
   return (
