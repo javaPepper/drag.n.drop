@@ -1,6 +1,18 @@
+html, body {
+    height: 100%;
+}
+
+.container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .main-container {
     display: flex;
     justify-content: center;
+    flex-grow: 1;
+    margin-bottom: 26px;
 }
 
 .post-list_container {
