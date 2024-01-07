@@ -1,21 +1,22 @@
-import Footer from './footer';
-import Header from './header';
+// import Footer from './footer';
+import NavBar from './nav-bar';
 import UsersList from './users-list';
 
 export default function App() {
   return (
     <div className='container'>
-      <header>
+      {/* <header>
         <div className="nav-container">
-          <Header />
+          <NavBar />
         </div>
-      </header>
+      </header> */}
       <main className="main-container">
         <UsersList />
+        <NavBar />
       </main>
-      <footer>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 }
