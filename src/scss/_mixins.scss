@@ -1,13 +1,15 @@
-@mixin nav-list {
-    display: flex;
-    width: 1600px;
-    height: 80px;
-    justify-content: space-around;
-    align-items: center;
-}
-
 @mixin container {
     display: flex;
     justify-content: center;
-    background: $color-header-violet;
+    padding-top: 25px;
+}
+
+@mixin nav-list {
+    display: flex;
+    // width: 1600px;
+    // height: 80px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    // padding: 20px;
 }

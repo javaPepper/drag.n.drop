@@ -6,11 +6,14 @@ import User from './user';
 import { UserType } from '../types/user';
 import { fetchUsers } from '../redux/actions';
 
-export default function UsersList() {
+type Users = {
+  users: UserType[];
+}
+
+export default function UsersList({users}: Users) {
   const isClicked = useAppSelector((state) => state.isClicked);
   const userId = useAppSelector((state) => state.id);
   const isClickedBackBtn = useAppSelector((state) => state.isClickedBackBtn);
-  const users = useAppSelector((state) => state.users);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -28,23 +31,22 @@ export default function UsersList() {
 
   }, [dispatch]);
 
-  return isClicked && !isClickedBackBtn ? (
-    <>
-      <PostsList id={userId} />
-      <BackButton />
-    </>
-  ) : (
-    <div className="users-list-container">
-      {users.length > 0 &&
-        users.map((user) => (
-          <User
-            id={user.id}
-            name={user.name}
-            email={user.email}
-            phone={user.phone}
-            key={user.id}
-          />
-        ))}
-    </div>
-  );
+  return(
+    isClicked && !isClickedBackBtn ? (
+      <>
+        <PostsList id={userId} />
+        <BackButton />
+      </>
+    ) : (
+      <div className="users-list-container">
+        {users.length > 0 &&
+          users.map((user, index) => (
+            <User
+              props={user}
+              key={user.id}
+              index={index}
+            />
+          ))}
+      </div>
+    ));
 }

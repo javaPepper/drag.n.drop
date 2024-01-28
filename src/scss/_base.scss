@@ -1,6 +1,18 @@
+html, body {
+    height: 100%;
+}
+
+.container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .main-container {
     display: flex;
     justify-content: center;
+    flex-grow: 1;
+    margin-bottom: 26px;
 }
 
 .post-list_container {
@@ -14,14 +26,14 @@
 }
 
 .back-button {
-    border: 2px solid #b0e0e6;
+    border: 2px solid $color-backBtn-border;
     padding: 5px 10px;
     border-radius: 15px;
     width: 200px;
-    color: #6db3bd;
+    color: $color-backBtn-bg;
 }
 
 .back-button:hover {
-    color: #ffffff;
-    background-color: #6db3bd;
+    color: $color-backBtnHov;
+    background-color: $color-backBtnHov-bg;
 }
