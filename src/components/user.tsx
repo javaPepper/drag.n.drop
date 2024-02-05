@@ -2,17 +2,17 @@ import { useState } from 'react';
 import GetPostsButton from './get-posts-button';
 import { Draggable } from 'react-beautiful-dnd';
 import { UserType } from '../types/user';
+import { getItemStyle } from '../utils';
 
 type UserProps = {
   index: number;
   props: UserType;
 }
 
-export default function User({ index, props }: UserProps) {
+export default function User({ props, index }: UserProps) {
   const {...properties} = props;
 
   const [isMouseOver, setMouseOver] = useState<boolean>(false);
-  const [isMouseLeave, setMouseLeave] = useState<boolean>(false);
 
   return (
     <article>
@@ -22,25 +22,26 @@ export default function User({ index, props }: UserProps) {
           setMouseOver(true);
         }}
         onMouseLeave={() => {
-          setMouseLeave(true);
           setMouseOver(false);
-          setMouseLeave(false);
         }}
       >
-        <div className="visually-hidden">{properties.id}</div>
         <Draggable
           draggableId={`${index}`}
           index={index}
           key={index}
         >
-          {(provided) => (
-            <div
-              className='draggable'
+          {(provided, snapshot) => (
+            <div className="user-description-list"
               ref={provided.innerRef}
               {...provided.dragHandleProps}
               {...provided.draggableProps}
+              style={
+                getItemStyle(
+                  snapshot.isDragging,
+                  provided.draggableProps.style)
+              }
             >
-              <ul className="user-description-list">
+              <ul>
                 <li className="name">{properties.name}</li>
                 <li className="email">{properties.email}</li>
                 <li className="phone">{properties.phone}</li>
@@ -49,7 +50,6 @@ export default function User({ index, props }: UserProps) {
           )}
         </Draggable>
         {isMouseOver &&
-        !isMouseLeave &&
         <GetPostsButton
           id={properties.id}
         />}

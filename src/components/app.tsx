@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from '../hooks';
+import { useAppSelector, useAppDispatch } from '../hooks';
 import { fetchUsers } from '../redux/actions';
 import NavBar from './nav-bar';
 import UsersList from './users-list';
