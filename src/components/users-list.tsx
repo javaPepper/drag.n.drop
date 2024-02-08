@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../hooks';
-import BackButton from './back-button';
 import PostsList from './posts-list';
 import User from './user';
 import { UserType } from '../types/user';
@@ -33,10 +32,9 @@ export default function UsersList({users}: Users) {
 
   return(
     isClicked && !isClickedBackBtn ? (
-      <>
-        <PostsList id={userId} />
-        <BackButton />
-      </>
+      <PostsList
+        id={userId}
+      />
     ) : (
       <div className="users-list-container">
         {users.length > 0 &&

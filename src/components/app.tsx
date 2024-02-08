@@ -1,5 +1,6 @@
 import { useAppSelector, useAppDispatch } from '../hooks';
 import { fetchUsers } from '../redux/actions';
+import BackButton from './back-button';
 import NavBar from './nav-bar';
 import UsersList from './users-list';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
@@ -8,6 +9,7 @@ export default function App() {
 
   const dispatch = useAppDispatch();
   const users = useAppSelector((state) => state.users);
+  const isClicked = useAppSelector((state) => state.isClicked);
 
   const onDragEndHandler = (result: DropResult) => {
     if(!result.destination) {
@@ -25,6 +27,7 @@ export default function App() {
   return (
     <div className='container'>
       <main className="main-container">
+        <NavBar />
         <DragDropContext
           onDragEnd={onDragEndHandler}
         >
@@ -44,7 +47,7 @@ export default function App() {
             )}
           </Droppable>
         </DragDropContext>
-        <NavBar />
+        {isClicked && <BackButton />}
       </main>
     </div>
   );

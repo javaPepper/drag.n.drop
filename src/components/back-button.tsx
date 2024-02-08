@@ -1,5 +1,5 @@
 import { useAppDispatch } from '../hooks';
-import { setClickedBackBtn } from '../redux/actions';
+import { setClicked, setClickedBackBtn } from '../redux/actions';
 
 export default function BackButton() {
   const dispatch = useAppDispatch();
@@ -9,6 +9,7 @@ export default function BackButton() {
         className="back-button"
         onClick={() => {
           dispatch(setClickedBackBtn(true));
+          dispatch(setClicked(false));
         }}
       >
           Back
