@@ -4,12 +4,17 @@ import BackButton from './back-button';
 import NavBar from './nav-bar';
 import UsersList from './users-list';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
+import WelcomeForm from './welcome-form';
+import { useEffect, useState } from 'react';
 
 export default function App() {
+
+  const [isVisible, setVisible] = useState<boolean>(false);
 
   const dispatch = useAppDispatch();
   const users = useAppSelector((state) => state.users);
   const isClicked = useAppSelector((state) => state.isClicked);
+  const isWelcomed = useAppSelector((state) => state.isWelcomed);
 
   const onDragEndHandler = (result: DropResult) => {
     if(!result.destination) {
@@ -24,31 +29,41 @@ export default function App() {
     dispatch(fetchUsers(items));
   };
 
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setVisible(true);
+    }, 2000);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
-    <div className='container'>
-      <main className="main-container">
-        <NavBar />
-        <DragDropContext
-          onDragEnd={onDragEndHandler}
-        >
-          <Droppable
-            droppableId='droppable'
-          >
-            {(provided) => (
-              <div
-                ref={provided.innerRef}
-                {...provided.droppableProps}
+    !isWelcomed && isVisible ? <WelcomeForm /> :
+      (
+        <div className='container'>
+          <main className="main-container">
+            <NavBar />
+            <DragDropContext
+              onDragEnd={onDragEndHandler}
+            >
+              <Droppable
+                droppableId='droppable'
               >
-                <UsersList
-                  users={users}
-                />
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-        </DragDropContext>
-        {isClicked && <BackButton />}
-      </main>
-    </div>
+                {(provided) => (
+                  <div
+                    ref={provided.innerRef}
+                    {...provided.droppableProps}
+                  >
+                    <UsersList
+                      users={users}
+                    />
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
+            {isClicked && <BackButton />}
+          </main>
+        </div>)
   );
 }
