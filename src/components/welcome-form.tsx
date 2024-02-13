@@ -1,5 +1,5 @@
 import { useAppDispatch } from '../hooks';
-import { setWelcomed } from '../redux/actions';
+import { setVisible, setWelcomed } from '../redux/actions';
 
 export default function WelcomeForm() {
 
@@ -12,6 +12,7 @@ export default function WelcomeForm() {
         onSubmit={(evt) => {
           evt.preventDefault();
           dispatch(setWelcomed(true));
+          dispatch(setVisible(false));
         }}
       >
         <header className="header">

@@ -1,20 +1,19 @@
 import { useAppSelector, useAppDispatch } from '../hooks';
-import { fetchUsers } from '../redux/actions';
+import { fetchUsers, setVisible } from '../redux/actions';
 import BackButton from './back-button';
 import NavBar from './nav-bar';
 import UsersList from './users-list';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import WelcomeForm from './welcome-form';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function App() {
-
-  const [isVisible, setVisible] = useState<boolean>(false);
 
   const dispatch = useAppDispatch();
   const users = useAppSelector((state) => state.users);
   const isClicked = useAppSelector((state) => state.isClicked);
   const isWelcomed = useAppSelector((state) => state.isWelcomed);
+  const isVisible = useAppSelector((state) => state.isVisible);
 
   const onDragEndHandler = (result: DropResult) => {
     if(!result.destination) {
@@ -31,11 +30,11 @@ export default function App() {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      setVisible(true);
+      dispatch(setVisible(true));
     }, 2000);
 
     return () => clearTimeout(timeoutId);
-  }, []);
+  });
 
   return (
     !isWelcomed && isVisible ? <WelcomeForm /> :
