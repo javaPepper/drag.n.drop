@@ -1,5 +1,5 @@
 import { PayloadAction, createReducer } from '@reduxjs/toolkit';
-import { fetchPosts, fetchUsers, setClicked, setClickedBackBtn, setUserId, setWelcomed } from './actions';
+import { fetchPosts, fetchUsers, setClicked, setClickedBackBtn, setUserId, setVisible, setWelcomed } from './actions';
 import { UserType } from '../types/user';
 import { PostType } from '../types/post';
 
@@ -10,6 +10,7 @@ type InitialStateType = {
   users: UserType[];
   posts: PostType[];
   isWelcomed: boolean;
+  isVisible: boolean;
 }
 
 const initialState: InitialStateType = {
@@ -19,6 +20,7 @@ const initialState: InitialStateType = {
   users: [],
   posts: [],
   isWelcomed: false,
+  isVisible: false,
 };
 
 export const postReducer = createReducer(initialState, (builder) => {
@@ -40,5 +42,8 @@ export const postReducer = createReducer(initialState, (builder) => {
     })
     .addCase(setWelcomed, (state, action: PayloadAction<boolean>) => {
       state.isWelcomed = action.payload;
+    })
+    .addCase(setVisible, (state, action: PayloadAction<boolean>) => {
+      state.isVisible = action.payload;
     });
 });
