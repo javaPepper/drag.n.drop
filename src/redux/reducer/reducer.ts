@@ -1,9 +1,9 @@
 import { PayloadAction, createReducer } from '@reduxjs/toolkit';
-import { fetchPosts, fetchUsers, setClicked, setClickedBackBtn, setUserId, setVisible, setWelcomed } from './actions';
-import { UserType } from '../types/user';
-import { PostType } from '../types/post';
+import { fetchPosts, fetchUsers, setClicked, setClickedBackBtn, setUserId, setVisible, setWelcomed } from '../actions';
+import { UserType } from '../../types/user';
+import { PostType } from '../../types/post';
 
-type InitialStateType = {
+export type InitialStateType = {
   isClicked: boolean;
   id: number;
   isClickedBackBtn: boolean;
@@ -47,3 +47,5 @@ export const postReducer = createReducer(initialState, (builder) => {
       state.isVisible = action.payload;
     });
 });
+
+// export default postReducer;
