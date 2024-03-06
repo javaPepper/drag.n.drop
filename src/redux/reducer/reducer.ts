@@ -47,5 +47,3 @@ export const postReducer = createReducer(initialState, (builder) => {
       state.isVisible = action.payload;
     });
 });
-
-// export default postReducer;

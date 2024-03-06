@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../hooks';
-import PostsList from './posts-list';
-import User from './user';
-import { UserType } from '../types/user';
-import { fetchUsers } from '../redux/actions';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import PostsList from '../posts-list/posts-list';
+import User from '../user/user';
+import { UserType } from '../../types/user';
+import { fetchUsers } from '../../redux/actions';
 
 type Users = {
   users: UserType[];
 }
 
-export default function UsersList({users}: Users) {
+function UsersList({users}: Users){
   const isClicked = useAppSelector((state) => state.isClicked);
   const userId = useAppSelector((state) => state.id);
   const isClickedBackBtn = useAppSelector((state) => state.isClickedBackBtn);
@@ -48,3 +48,5 @@ export default function UsersList({users}: Users) {
       </div>
     ));
 }
+
+export default UsersList;

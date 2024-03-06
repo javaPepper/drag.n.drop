@@ -1,5 +1,5 @@
-import { setClicked, setClickedBackBtn, setUserId, setVisible } from '../redux/actions';
-import { useAppDispatch } from '../hooks';
+import { setClicked, setClickedBackBtn, setUserId, setVisible } from '../../redux/actions';
+import { useAppDispatch } from '../../hooks';
 
 type GetPostsButtonProps = {
   id: number;

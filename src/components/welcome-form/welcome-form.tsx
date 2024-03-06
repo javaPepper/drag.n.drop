@@ -1,5 +1,5 @@
-import { useAppDispatch } from '../hooks';
-import { setVisible, setWelcomed } from '../redux/actions';
+import { useAppDispatch } from '../../hooks';
+import { setVisible, setWelcomed } from '../../redux/actions';
 
 export default function WelcomeForm() {
 
@@ -17,7 +17,7 @@ export default function WelcomeForm() {
       >
         <header className="header">
             Hey, there! Good to see you. I&apos;m Sergio and I&apos;m a frontend developer.
-            Besides you can push any button, don&apos;t forget you can drag&apos;n&apos;drop some elements.
+            Besides you can click any button, don&apos;t forget to drag&apos;n&apos;drop some elements.
             Just like that.
             Enjoy!
         </header>

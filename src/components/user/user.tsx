@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import GetPostsButton from './get-posts-button';
+import GetPostsButton from '../get-post-button/get-posts-button';
 import { Draggable } from 'react-beautiful-dnd';
-import { UserType } from '../types/user';
-import { getItemStyle } from '../utils';
+import { UserType } from '../../types/user';
+import { getItemStyle } from '../../utils';
 
 type UserProps = {
   index: number;
@@ -16,7 +16,7 @@ export default function User({ props, index }: UserProps) {
 
   return (
     <article>
-      <div
+      <div data-testid={isMouseOver}
         className="user-container"
         onMouseOver={() => {
           setMouseOver(true);
