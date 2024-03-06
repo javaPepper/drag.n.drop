@@ -1,39 +1,43 @@
+import { mockId } from '../../mocks/id';
+import { mockInitialState } from '../../mocks/initial-state';
+import { mockPosts } from '../../mocks/posts';
+import { mockUsers } from '../../mocks/users';
 import { fetchPosts, fetchUsers, setClicked, setClickedBackBtn, setUserId, setVisible, setWelcomed } from '../actions';
 import { postReducer } from './reducer';
-import { id, posts, users, testInitialState } from '../../utils/index';
+
 
 describe('postReducer', () => {
   it('returns initial state without any data', () => {
     expect(postReducer(undefined, {type: ''}))
-      .toEqual(testInitialState);
+      .toEqual(mockInitialState);
   });
   describe('actions', () => {
-    it('should return true with "setClicked" action', () => {
-      expect(postReducer(testInitialState, setClicked(true)).isClicked)
+    it('returns true with "setClicked" action', () => {
+      expect(postReducer(mockInitialState, setClicked(true)).isClicked)
         .toBe(true);
     });
-    it('should return number with "setUserId" action', () => {
-      expect(postReducer(testInitialState, setUserId(Number(id))).id)
-        .toEqual(id);
+    it('returns number with "setUserId" action', () => {
+      expect(postReducer(mockInitialState, setUserId(Number(mockId))).id)
+        .toEqual(mockId);
     });
-    it('should return true with "setClickedBackBtn" action', () => {
-      expect(postReducer(testInitialState, setClickedBackBtn(true)).isClickedBackBtn)
+    it('returns true with "setClickedBackBtn" action', () => {
+      expect(postReducer(mockInitialState, setClickedBackBtn(true)).isClickedBackBtn)
         .toBe(true);
     });
-    it('should return the list of users with "fetchUsers" action', () => {
-      expect(postReducer(testInitialState, fetchUsers(users)).users)
-        .toEqual(users);
+    it('returns the list of users with "fetchUsers" action', () => {
+      expect(postReducer(mockInitialState, fetchUsers(mockUsers)).users)
+        .toEqual(mockPosts);
     });
-    it('should return the list of posts with "fetcPosts" action', () => {
-      expect(postReducer(testInitialState, fetchPosts(posts)).posts)
-        .toEqual(posts);
+    it('returns the list of posts with "fetcPosts" action', () => {
+      expect(postReducer(mockInitialState, fetchPosts(mockPosts)).posts)
+        .toEqual(mockPosts);
     });
-    it('should return true with "setWelcomed" action', () => {
-      expect(postReducer(testInitialState, setWelcomed(true)).isWelcomed)
+    it('returns true with "setWelcomed" action', () => {
+      expect(postReducer(mockInitialState, setWelcomed(true)).isWelcomed)
         .toBe(true);
     });
-    it('should return true with "setVisible" action', () => {
-      expect(postReducer(testInitialState, setVisible(true)).isVisible)
+    it('returns true with "setVisible" action', () => {
+      expect(postReducer(mockInitialState, setVisible(true)).isVisible)
         .toBe(true);
     });
   });

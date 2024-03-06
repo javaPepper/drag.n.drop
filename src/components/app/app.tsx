@@ -1,10 +1,10 @@
-import { useAppSelector, useAppDispatch } from '../hooks';
-import { fetchUsers, setVisible } from '../redux/actions';
-import BackButton from './back-button';
-import NavBar from './nav-bar';
-import UsersList from './users-list';
+import { useAppSelector, useAppDispatch } from '../../hooks';
+import { fetchUsers, setVisible } from '../../redux/actions';
+import BackButton from '../back-button/back-button';
+import NavBar from '../nav-bar/nav-bar';
+import UsersList from '../users-list/users-list';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
-import WelcomeForm from './welcome-form';
+import WelcomeForm from '../welcome-form/welcome-form';
 import { useEffect } from 'react';
 
 export default function App() {
