@@ -26,7 +26,7 @@ describe('postReducer', () => {
     });
     it('returns the list of users with "fetchUsers" action', () => {
       expect(postReducer(mockInitialState, fetchUsers(mockUsers)).users)
-        .toEqual(mockPosts);
+        .toEqual(mockUsers);
     });
     it('returns the list of posts with "fetcPosts" action', () => {
       expect(postReducer(mockInitialState, fetchPosts(mockPosts)).posts)
