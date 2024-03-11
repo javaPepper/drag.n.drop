@@ -2,10 +2,12 @@ import { useAppSelector, useAppDispatch } from '../../hooks';
 import { fetchUsers, setVisible } from '../../redux/actions';
 import BackButton from '../back-button/back-button';
 import NavBar from '../nav-bar/nav-bar';
-import UsersList from '../users-list/users-list';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import WelcomeForm from '../welcome-form/welcome-form';
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
+import Spinner from '../spinner';
+
+const UsersListComponent = lazy(() => import('../users-list/users-list'));
 
 export default function App() {
 
@@ -53,9 +55,11 @@ export default function App() {
                     ref={provided.innerRef}
                     {...provided.droppableProps}
                   >
-                    <UsersList
-                      users={users}
-                    />
+                    <Suspense fallback={<Spinner/>}>
+                      <UsersListComponent
+                        users={users}
+                      />
+                    </Suspense>
                     {provided.placeholder}
                   </div>
                 )}
