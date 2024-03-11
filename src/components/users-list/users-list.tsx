@@ -1,9 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import PostsList from '../posts-list/posts-list';
 import User from '../user/user';
 import { UserType } from '../../types/user';
 import { fetchUsers } from '../../redux/actions';
+import Spinner from '../spinner';
+
+const PostsListComponent = lazy(() => import('../posts-list/posts-list'));
 
 type Users = {
   users: UserType[];
@@ -32,9 +34,11 @@ function UsersList({users}: Users){
 
   return(
     isClicked && !isClickedBackBtn ? (
-      <PostsList
-        id={userId}
-      />
+      <Suspense fallback={<Spinner/>}>
+        <PostsListComponent
+          id={userId}
+        />
+      </Suspense>
     ) : (
       <div className="users-list-container">
         {users.length > 0 &&
