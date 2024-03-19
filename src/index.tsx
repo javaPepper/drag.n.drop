@@ -3,6 +3,8 @@ import App from './components/app/app';
 import './index.scss';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
+import { ErrorBoundary } from 'react-error-boundary';
+import Fallback from './components/error-boundary-fallback';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -10,6 +12,11 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <Provider store={store}>
-    <App />
+    <ErrorBoundary
+      FallbackComponent={Fallback}
+    >
+      <App />
+    </ErrorBoundary>
+
   </Provider>
 );

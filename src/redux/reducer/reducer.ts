@@ -13,7 +13,7 @@ export type InitialStateType = {
   isVisible: boolean;
 }
 
-const initialState: InitialStateType = {
+export const initialState: InitialStateType = {
   isClicked: false,
   id: 0,
   isClickedBackBtn: false,
