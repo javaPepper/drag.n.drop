@@ -1,0 +1,49 @@
+.wf-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .welcome-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 700px;
+    height: 700px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 74px;
+    font-family: Inter;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+
+  .wf-video {
+    height: 450px;
+    width: 400px;
+  }
+
+  .btn-welcome-form {
+    background: #d0d0d0;
+    border-radius: 10px;
+    padding: 18px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-welcome-form:hover {
+    background: #87b8f8;
+  }
