@@ -28,7 +28,8 @@ function UsersList({users}: Users){
       .then((data: UserType[]) => {
         dispatch(fetchUsers(data));
       })
-      .catch((error) => `Could not fetch data: ${error}`);
+      .catch((error) => `Could not fetch data: ${error}`
+      );
 
   }, [dispatch]);
 
