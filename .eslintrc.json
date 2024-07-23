@@ -12,11 +12,14 @@
     },
     "env": {
       "es2017": true,
-      "browser": true
+      "browser": true,
+      "jest": true
     },
     "extends": "htmlacademy/react-typescript",
     "rules": {
       "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn"
+      "react-hooks/exhaustive-deps": "warn",
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": "off"
     }
   }

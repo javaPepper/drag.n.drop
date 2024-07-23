@@ -1,15 +1,17 @@
-import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../hooks';
-import PostsList from './posts-list';
-import User from './user';
-import { UserType } from '../types/user';
-import { fetchUsers } from '../redux/actions';
+import { useEffect, lazy, Suspense } from 'react';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import User from '../user/user';
+import { UserType } from '../../types/user';
+import { fetchUsers } from '../../redux/actions';
+import Spinner from '../spinner';
+
+const PostsListComponent = lazy(() => import('../posts-list/posts-list'));
 
 type Users = {
   users: UserType[];
 }
 
-export default function UsersList({users}: Users) {
+function UsersList({users}: Users){
   const isClicked = useAppSelector((state) => state.isClicked);
   const userId = useAppSelector((state) => state.id);
   const isClickedBackBtn = useAppSelector((state) => state.isClickedBackBtn);
@@ -26,15 +28,18 @@ export default function UsersList({users}: Users) {
       .then((data: UserType[]) => {
         dispatch(fetchUsers(data));
       })
-      .catch((error) => `Could not fetch data: ${error}`);
+      .catch((error) => `Could not fetch data: ${error}`
+      );
 
   }, [dispatch]);
 
   return(
     isClicked && !isClickedBackBtn ? (
-      <PostsList
-        id={userId}
-      />
+      <Suspense fallback={<Spinner/>}>
+        <PostsListComponent
+          id={userId}
+        />
+      </Suspense>
     ) : (
       <div className="users-list-container">
         {users.length > 0 &&
@@ -48,3 +53,5 @@ export default function UsersList({users}: Users) {
       </div>
     ));
 }
+
+export default UsersList;
