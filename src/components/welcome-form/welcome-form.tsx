@@ -16,8 +16,8 @@ export default function WelcomeForm() {
         }}
       >
         <header className="header">
-            Hey, there! Good to see you. I&apos;m Sergio and I&apos;m a frontend developer.
-            Besides you can click any button, don&apos;t forget to drag&apos;n&apos;drop some elements.
+            Hey there! Good to see you. I&apos;m Sergio and I&apos;m a frontend developer.
+            Before you click any button, don&apos;t forget to drag&apos;n&apos;drop some elements.
             Just like that.
             Enjoy!
         </header>
