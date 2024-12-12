@@ -20,9 +20,9 @@ In the project directory, you can run:
 
 Checkout the -dev- branch.\
 Run `npm run start`. The application will start automatically in the browser. If not\
-Open [http://localhost:3000/drag.n.drop] to view it in the browser.
+Open [http://localhost:3000/drag.n.drop](http://localhost:3000/drag.n.drop) to view it in the browser.
 
-The page will reload if you make edits.\
+The page will reload if you make edits.
 
 ### `npm run test`
 
@@ -35,9 +35,9 @@ Launches the lint runner.
 
 ### Deployment
 
-**Note: Scripts `npm run build`, `npm run predeploy`, `npm run deploy` are only for deployment.\
-**Note: I'll appreciate and welcome any and all contributions!\
-**Note: For further information please read `Contributing` and `Instruction` sections below. 
+** Scripts `npm run build`, `npm run predeploy`, `npm run deploy` are only for deployment.**\
+** I'll appreciate and welcome any and all contributions!**\
+** For further information please read `Contributing` and `Instruction` sections below.**
 
 ### Contributing
 
