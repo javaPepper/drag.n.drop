@@ -1,46 +1,55 @@
-# Getting Started with Create React App
+# Drag'n'Drop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+
+The project was for knowledge consolidation of React, Redux and TypeScript common principles.
+
+- Preprocessor SASS was implemented for styles.
+- Added compiler Babel.
+- JSONPlaceholder was chosen as a solution for REST.
+
+## Stack
+
+React, TypeScript, Redux, HTML, CSS(SASS), Babel
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Checkout the -dev- branch.\
+Run `npm run start`. The application will start automatically in the browser. If not\
+Open [http://localhost:3000/drag.n.drop] to view it in the browser.
 
 The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+WIP
+Launches the test runner in the interactive watch mode.
 
-### `npm run build`
+### `npm run lint`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Launches the lint runner.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Scripts `npm run build`, `npm run predeploy`, `npm run deploy` are only for deployment.\
+**I'll appreciate and welcome any and all contributions!\
+**For further information please read `Contributing` and `Instruction` sections below. 
 
-### `npm run eject`
+### Contributing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Report bugs: If you encounter any bugs, please let us know. Open up an issue and let us know the problem.
+2. Contribute code: If you are a developer and want to contribute, follow the instructions below to get started!
+3. Suggestions: If you don't want to code but have some awesome ideas, open up an issue explaining some updates or imporvements you would like to see!
+4. Documentation: If you see the need for some additional documentation, feel free to add some!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Instructions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Fork this repository
+2. Clone the forked repository
+3. Add your contributions (code or documentation)
+4. Commit and push
+5. Wait for pull request to be merged
