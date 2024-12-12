@@ -18,8 +18,8 @@ In the project directory, you can run:
 
 ### `npm run start`
 
-Checkout the -dev- branch.
-Run `npm run start`. The application will start automatically in the browser. If not
+Checkout the -dev- branch.\
+Run `npm run start`. The application will start automatically in the browser. If not\
 Open [http://localhost:3000/drag.n.drop](http://localhost:3000/drag.n.drop) to view it in the browser.
 
 The page will reload if you make edits.
