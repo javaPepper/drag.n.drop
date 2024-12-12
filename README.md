@@ -35,8 +35,8 @@ Launches the lint runner.
 
 ### Deployment
 
-**Scripts `npm run build`, `npm run predeploy`, `npm run deploy` are only for deployment.**
-**I'll appreciate and welcome any and all contributions!**
+**Scripts `npm run build`, `npm run predeploy`, `npm run deploy` are only for deployment.**\
+**I'll appreciate and welcome any and all contributions!**\
 **For further information please read `Contributing` and `Instruction` sections below.**
 
 ### Contributing
