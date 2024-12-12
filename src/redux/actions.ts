@@ -16,3 +16,9 @@ export const fetchUsers = createAction('fetchUsers',
 
 export const fetchPosts = createAction('fetchPosts',
   (posts: PostType[]) => ({payload: posts}));
+
+export const setWelcomed = createAction('setWelcomed',
+  (isWelcomed: boolean) => ({payload: isWelcomed}));
+
+export const setVisible = createAction('setVisible',
+  (isVisible: boolean) => ({payload: isVisible}));

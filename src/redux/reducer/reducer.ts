@@ -1,22 +1,26 @@
 import { PayloadAction, createReducer } from '@reduxjs/toolkit';
-import { fetchPosts, fetchUsers, setClicked, setClickedBackBtn, setUserId } from './actions';
-import { UserType } from '../types/user';
-import { PostType } from '../types/post';
+import { fetchPosts, fetchUsers, setClicked, setClickedBackBtn, setUserId, setVisible, setWelcomed } from '../actions';
+import { UserType } from '../../types/user';
+import { PostType } from '../../types/post';
 
-type InitialStateType = {
+export type InitialStateType = {
   isClicked: boolean;
   id: number;
   isClickedBackBtn: boolean;
   users: UserType[];
   posts: PostType[];
+  isWelcomed: boolean;
+  isVisible: boolean;
 }
 
-const initialState: InitialStateType = {
+export const initialState: InitialStateType = {
   isClicked: false,
   id: 0,
   isClickedBackBtn: false,
   users: [],
   posts: [],
+  isWelcomed: false,
+  isVisible: false,
 };
 
 export const postReducer = createReducer(initialState, (builder) => {
@@ -35,5 +39,11 @@ export const postReducer = createReducer(initialState, (builder) => {
     })
     .addCase(fetchPosts, (state, action: PayloadAction<PostType[]>) => {
       state.posts = action.payload;
+    })
+    .addCase(setWelcomed, (state, action: PayloadAction<boolean>) => {
+      state.isWelcomed = action.payload;
+    })
+    .addCase(setVisible, (state, action: PayloadAction<boolean>) => {
+      state.isVisible = action.payload;
     });
 });

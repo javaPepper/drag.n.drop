@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import {useAppDispatch, useAppSelector } from '../hooks';
-import Post from './post';
-import { PostType } from '../types/post';
-import { fetchPosts } from '../redux/actions';
+import {useAppDispatch, useAppSelector } from '../../hooks';
+import Post from '../post/post';
+import { PostType } from '../../types/post';
+import { fetchPosts } from '../../redux/actions';
 
 type PostsListProps = {
   id: number;
